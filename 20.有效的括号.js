@@ -11,7 +11,7 @@
  */
 var isValid = function (s) {
   if (s % 2) return false;
-  let stack = [];
+  const stack = [];
   for (let item of s) {
     switch (item) {
       case '{':
