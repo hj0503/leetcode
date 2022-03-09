@@ -9,6 +9,7 @@
  * @param {number[]} nums
  * @return {number}
  */
+// 快满指针解法
 var removeDuplicates = function (nums) {
   const n = nums.length;
   if (n === 0) {
