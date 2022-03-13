@@ -11,7 +11,7 @@
  * @return {number}
  */
 var searchInsert = function(nums, target) {
-  const a = 1
+  const a = 1;
 };
 // @lc code=end
 
