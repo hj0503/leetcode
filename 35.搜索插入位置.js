@@ -10,8 +10,14 @@
  * @param {number} target
  * @return {number}
  */
-var searchInsert = function(nums, target) {
-  const a = 1
+var searchInsert = function (nums, target) {
+  let number;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] >= target) {
+      number = i;
+      break;
+    }
+  }
+  return number == null ? nums.length : number;
 };
 // @lc code=end
-
