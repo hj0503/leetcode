@@ -8,27 +8,18 @@
   </head>
   <body>
     <script>
-      var majorityElement = function (nums) {
-        const obj = {};
-        nums.forEach(num => {
-          if (!obj[num]) {
-            obj[num] = 1;
-          } else {
-            obj[num] += 1;
+      var containsDuplicate = function (nums) {
+        const set = new Set();
+        for (let i = 0; i < nums.length; i++) {
+          console.log('sssss', set, nums[i])
+          if (set.has(nums[i])) {
+            return true;
           }
-        });
-        let max = obj[nums[0]];
-        let maxNum = nums[0];
-        console.log('obj', obj, max)
-        Object.keys(obj).forEach(key => {
-          if (max < obj[key]) {
-            maxNum = key;
-            max = obj[key];
-          }
-        });
-        return maxNum;
+          set.add(nums[i]);
+        }
+        return false;
       };
-      console.log('majorityElement([3, 2, 3])', majorityElement([3, 2, 3]))
+      console.log('containsDuplicate([3, 2, 3])', containsDuplicate([3, 2, 3]));
     </script>
   </body>
 </html>
