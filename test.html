@@ -8,18 +8,14 @@
   </head>
   <body>
     <script>
-      var containsDuplicate = function (nums) {
-        const set = new Set();
-        for (let i = 0; i < nums.length; i++) {
-          console.log('sssss', set, nums[i])
-          if (set.has(nums[i])) {
-            return true;
-          }
-          set.add(nums[i]);
+      var thirdMax = function (nums) {
+        nums.sort((a, b) => b - a);
+        if (nums.length < 3) {
+          return nums[0];
         }
-        return false;
+        return nums[2];
       };
-      console.log('containsDuplicate([3, 2, 3])', containsDuplicate([3, 2, 3]));
+      console.log('containsDuplicate([3, 2, 3])', thirdMax([2, 2, 3, 1]));
     </script>
   </body>
 </html>
