@@ -9,8 +9,8 @@
  * @param {string} s
  * @return {boolean}
  */
-var isPalindrome = function(s) {
-
+var isPalindrome = function (s) {
+  s = s.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
+  return s === s.split('').reverse().join('');
 };
 // @lc code=end
-
