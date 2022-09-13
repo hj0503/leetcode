@@ -9,8 +9,24 @@
  * @param {string} word
  * @return {boolean}
  */
-var detectCapitalUse = function(word) {
-
+var detectCapitalUse = function (word) {
+  // 无论第 11 个字母是否大写，其他字母必须与第 22 个字母的大小写相同；
+  // 若第 11 个字母为小写，则需额外判断第 22 个字母是否为小写。
+  if (
+    word.length >= 2 &&
+    word[0] === word[0].toLowerCase() &&
+    word[1] === word[1].toUpperCase()
+  ) {
+    return false;
+  }
+  for (let i = 2; i < word.length; ++i) {
+    if (
+      (word[i] === word[i].toLowerCase()) ^
+      (word[1] === word[1].toLowerCase())
+    ) {
+      return false;
+    }
+  }
+  return true;
 };
 // @lc code=end
-
